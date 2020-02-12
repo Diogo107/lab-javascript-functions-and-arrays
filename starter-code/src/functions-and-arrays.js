@@ -67,6 +67,19 @@ const wordsArr = [
   'palace'
 ];
 
+function averageWordLength(arr) {
+  var wordLength = 0;
+
+  if (arr == 0) {
+    return null;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    wordLength += arr[i].length;
+  }
+  wordLengthAverage = wordLength / arr.length;
+  return wordLengthAverage;
+}
+
 // Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
@@ -82,6 +95,17 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray(arr) {
+  var singleWords = [];
+  for (let i = 0; i < arr.length; i++) {
+    //console.log (singleWords);
+    if (singleWords.indexOf(arr[i]) == -1) {
+      singleWords.push(arr[i]);
+    }
+  }
+  return singleWords;
+}
+
 // Iteration #6: Find elements
 const wordsFind = [
   'machine',
@@ -93,6 +117,14 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+
+function doesWordExist(array, word) {
+  if (array.includes(word)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -108,6 +140,18 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(array, word) {
+  var thisTimes = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (word === array[i]) {
+      thisTimes += 1;
+    }
+  }
+
+  return thisTimes;
+}
 
 // Iteration #8: Bonus
 
@@ -133,3 +177,42 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+/* greatestProduct(matrix){
+
+  for (let i = 0; i<matrix.length; i++){
+    for (let d = 0; d<matrix.length; i++){
+
+    }
+  }
+
+
+
+
+} */
+
+/*
+const greatestProduct = matrix => {
+  ket greatest = 0;
+
+  const rowCount = matrix.length;
+  const columnCount = matrix[0].length;
+}
+
+for (let r =0; r < rowCount; r++){
+  for (let i = 0; i < columnCount - 3; i++){
+    const product = matrix[r][i] * matrix[r][i+1] * matrix[r][i+2] * matrix[r][i+3];
+    if (product > greatest){
+      greatest = product;
+    }
+  }
+}
+
+for (let c =0; r < columnCount; c++){
+  for (let i = 0; i < columnCount - 3; i++){
+    const product = matrix[c][i] * matrix[c][i+1] * matrix[c][i+2] * matrix[c][i+3];
+    if (product > greatest){
+      greatest = product;
+    }
+  }
+}*/
